@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+  body {
+    @apply bg-cream-50 font-sans text-ink-700 antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink-900 tracking-tight;
+    text-wrap: balance;
+  }
+  ::selection {
+    @apply bg-coral-200 text-ink-900;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-coral-500 ring-offset-2 ring-offset-cream-50;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-medium transition-all duration-200 active:scale-95;
+  }
+  .btn-primary {
+    @apply btn bg-coral-600 text-cream-50 shadow-md hover:bg-coral-700 hover:shadow-lg;
+  }
+  .btn-dark {
+    @apply btn bg-ink-900 text-cream-50 hover:bg-ink-700;
+  }
+  .btn-outline {
+    @apply btn border border-ink-200 bg-transparent text-ink-800 hover:border-ink-700 hover:bg-cream-100;
+  }
+  .eyebrow {
+    @apply text-sm font-medium uppercase tracking-widest text-coral-600;
+  }
+  .section {
+    @apply mx-auto w-full max-w-7xl px-6 py-24 md:py-32;
+  }
+  .grain {
+    background-image: radial-gradient(hsla(150, 20%, 8%, 0.07) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
